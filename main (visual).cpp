@@ -1190,7 +1190,7 @@ void initialInterface(Instance& StartInstance) {
 						if (current.transport != Start)
 							curTransfers = distantions[current.index][current.transport].second;
 
-						int add = (current.transport != Start && current.transport != e.type) ? 1 : 0;
+						int add = (current.transport != Start and current.transport != e.type) ? 1 : 0;
 						int newTransfers = curTransfers + add;
 
 						auto& best = distantions[e.to][e.type];
@@ -1257,7 +1257,7 @@ void initialInterface(Instance& StartInstance) {
 				ostringstream asas;
 				res->Visible = true;
 
-				Result& r = results[0]; // лучший результат
+				Result& r = results[0]; // Г«ГіГ·ГёГЁГ© Г°ГҐГ§ГіГ«ГјГІГ ГІ
 				if (!r.reachable) {
 					asas << "Path not exist";
 					res->Text = asas.str();
@@ -1375,4 +1375,5 @@ int WinMain() {
 	initialInterface(StartInstance);
 
 	start(StartInstance, { 1400, 800, 144 }, "Megapolis transport system");
+
 }
