@@ -190,7 +190,7 @@ void createWay(vector<vector<Edge>>& vertexEdges, vector<vector<Vertex>>& compon
 			if (current.transport != Start)
 				curTransfers = distantions[current.index][current.transport].second;
 
-			int add = (current.transport != Start && current.transport != e.type) ? 1 : 0;
+			int add = (current.transport != Start and current.transport != e.type) ? 1 : 0;
 			int newTransfers = curTransfers + add;
 
 			auto& best = distantions[e.to][e.type];
